@@ -119,11 +119,16 @@
 	            };
 	        } ());
 
-	        // Whenever the selectedMake changes, reset the selectedModel 
-
+            // Whenever the selectedMake changes, reset the selectedModel 
+            my.viewmodel.selectedMake.subscribe(function () {
+                my.viewmodel.selectedModel(undefined);
+            }, my.viewmodel);
 	        // Whenever the selectedModel changes, reset the selectedCar
+            my.viewmodel.selectedModel.subscribe(function () {
+                my.viewmodel.selectedCar(undefined);
+            }, my.viewmodel);
 
-	        ko.applyBindings(my.viewmodel);
+            ko.applyBindings(my.viewmodel); 
 	    });
 
     </script>
