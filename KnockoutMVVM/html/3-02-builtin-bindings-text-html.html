@@ -23,7 +23,7 @@
                 },
 			    // text/html
 				id: ko.observable("123"),
-				details: ko.observable("This guitar rocks!"),
+				details: ko.observable("<strong><em>This guitar rocks!</em></strong>"),
 				model: {
 					code: ko.observable("314ce"),
 					name: ko.observable("Taylor 314 ce")
@@ -70,11 +70,11 @@
 							html</div>
 					</td>
 					<td>
-						<div data-bind="text: details">
+						<div data-bind="html: details">
 						</div>
 					</td>
 					<td>
-						<span>details: </span><span data-bind="text: details"></span>
+						<span>details: </span><span data-bind="html: details"></span>
 					</td>
 				</tr>
 			</table>
