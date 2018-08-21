@@ -20,6 +20,12 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,6 +80,16 @@
     <Content Include="html\2-07-observableArrays.html" />
     <Content Include="html\2-08-observableArrays-functions.html" />
     <Content Include="html\2-09-subscribe-linked-dropdown-lists.html" />
+    <Content Include="html\3-01-builtin-bindings.html" />
+    <Content Include="html\3-02-builtin-bindings-text-html.html" />
+    <Content Include="html\3-03-builtin-bindings-value-valueupdate.html" />
+    <Content Include="html\3-04-builtin-bindings-checkboxes-radio.html" />
+    <Content Include="html\3-05-builtin-bindings-dropdowns.html" />
+    <Content Include="html\3-06-builtin-bindings-enable-disable.html" />
+    <Content Include="html\3-07-builtin-bindings-hasfocus-uniquename.html" />
+    <Content Include="html\3-08-builtin-bindings-click-event-visible.html" />
+    <Content Include="html\3-09-builtin-bindings-css-style.html" />
+    <Content Include="html\3-10-builtin-bindings-attr.html" />
     <Content Include="images\314ce.png" />
     <Content Include="images\Dunlop Trigger Classical Guitar Capo.png" />
     <Content Include="images\El Dorado Vintage Hand-Tooled Leather Guitar Strap.png" />
