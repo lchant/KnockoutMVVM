@@ -12,8 +12,8 @@
         $(function () {
             var photoPath = "/images/";
 
-            // function helper 
-            my.formatCurrency = function(value) {
+            // function helper
+            my.formatCurrency = function (value) {
                 return "$" + value.toFixed(2);
             };
 
@@ -39,7 +39,7 @@
             };
             // NOTE: I am showing 2 ways to handle "this" with a computed observable.
             // 1st way is to pass in what "this should" represent.
-            // 2nd way is to skip it, and use a variable that is scoped 
+            // 2nd way is to skip it, and use a variable that is scoped
             // outside of the computed function.
 
             // The ViewModel
@@ -62,16 +62,16 @@
                 loadProducts: function () {
                     $.each(my.sampleData.data.Products, function (i, p) {
                         my.vm.products.push(new my.Product()
-    	                        .id(p.Id)
-    	                        .salePrice(p.SalePrice)
-    	                        .photo(p.Photo)
-    	                        .shortDescription(p.Model.Name)
+                            .id(p.Id)
+                            .salePrice(p.SalePrice)
+                            .photo(p.Photo)
+                            .shortDescription(p.Model.Name)
                         );
                     });
                 }
             };
 
-            // Computed observable function. 
+            // Computed observable function.
             // We append it to the ViewModel here.
             my.vm.grandTotal = ko.computed(function () {
                 var total = 0;
@@ -81,7 +81,7 @@
                 });
                 return total;
             }, my.vm);
-            
+
             my.vm.loadProducts();
             ko.applyBindings(my.vm);
         });
@@ -90,11 +90,10 @@
 <body>
     <div class="page">
         <div class="header" data-bind="with: metadata">
-            <h1 data-bind="text: pageTitle">
-            </h1>
+            <h1 data-bind="text: pageTitle"></h1>
             <div data-bind="with:personal">
                 <a href="00-index.html">Index</a> <a data-bind="attr: {href: link, title: text}, text: text"
-                    class="personalCss"></a>
+                                                     class="personalCss"></a>
             </div>
         </div>
         <div id="main">
@@ -113,14 +112,13 @@
                         <tbody data-bind='foreach: lines'>
                             <tr>
                                 <td style="width: 25px;">
-                                    <select data-bind="options:$parent.products, value:product, optionsText: 'shortDescription', optionsCaption:'Select a product ...'">
-                                    </select>
+                                    <select data-bind="options:$parent.products, value:product, optionsText: 'shortDescription', optionsCaption:'Select a product ...'"></select>
                                 </td>
                                 <td data-bind="if: product" style="width: 100px;">
                                     <span data-bind='text: my.formatCurrency(product().salePrice())'></span>
                                 </td>
                                 <td style="width: 100px;">
-                                    <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' class="integerInput"/>
+                                    <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' class="integerInput" />
                                 </td>
                                 <td style="width: 100px;">
                                     <span data-bind='visible: product, text: my.formatCurrency(extendedPrice())'></span>
@@ -136,26 +134,26 @@
                     </p>
                     <button data-bind='click: addLine'>Add product</button>
                 </div>
+            </div>
         </div>
-    </div>
-    <div class="topics">
-        <span>Explores:</span>
-        <ul>
-            <li>observable</li>
-            <li>computed (for the extended price)</li>
-            <li>computed (for the grand total)</li>
-            <li>click</li>
-			<li>valueUpdate: 'afterkeydown'</li>
-			<li>visible</li>
-			<li>options</li>
-			<li>optionsText</li>
-			<li>selectedOptions</li>
-			<li>if (quick glimpse)</li>
-			<li>foreach (quick glimpse)</li>
-			<li>$parent (quick glimpse)</li>
-            <li>observableArray (quick glimpse)</li>
-        </ul>
-    </div>
+        <div class="topics">
+            <span>Explores:</span>
+            <ul>
+                <li>observable</li>
+                <li>computed (for the extended price)</li>
+                <li>computed (for the grand total)</li>
+                <li>click</li>
+                <li>valueUpdate: 'afterkeydown'</li>
+                <li>visible</li>
+                <li>options</li>
+                <li>optionsText</li>
+                <li>selectedOptions</li>
+                <li>if (quick glimpse)</li>
+                <li>foreach (quick glimpse)</li>
+                <li>$parent (quick glimpse)</li>
+                <li>observableArray (quick glimpse)</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
